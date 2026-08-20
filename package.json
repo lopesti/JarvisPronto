@@ -1,0 +1,23 @@
+{
+  "name": "jarvispronto",
+  "version": "1.1.0",
+  "license": "ISC",
+  "description": "Bot WhatsApp para vendas do Volumetrão Gel",
+  "main": "engine/app.js",
+  "scripts": {
+    "start": "node engine/app.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "@whiskeysockets/baileys": "^7.0.0-rc11",
+    "bcrypt": "^6.0.0",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "groq-sdk": "^1.2.0",
+    "jsonwebtoken": "^9.0.3",
+    "node-cron": "^3.0.3",
+    "pg": "^8.21.0",
+    "qrcode-terminal": "^0.12.0"
+  }
+}
