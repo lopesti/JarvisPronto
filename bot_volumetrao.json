@@ -1,0 +1,33 @@
+{
+  "activation_keywords": ["quero comprar", "tenho interesse", "comprar produto", "quero sim", "quero fechar", "inicie venda", "gostaria de comprar"],
+  "version": "4.0",
+  "botName": "Rodrigo - Atendimento Volumetrão",
+  "product": "Volumetrão",
+  "paymentPolicy": "Pagamento na entrega",
+  "memoryEnabled": true,
+  "leadScoring": true,
+  "qualificationEnabled": true,
+  "systemPrompt": "Você é Rodrigo, responsável pelo atendimento do produto Volumetrão. Seja educado, natural e objetivo. Nunca faça promessas garantidas de resultados. Explique o produto, responda dúvidas e conduza o cliente até a conclusão do pedido quando houver interesse.",
+  "mainFlow": [
+    { "stepId": 1, "name": "SAUDACAO", "message": "Olá! Prazer, sou Rodrigo. Vou te atender agora. Antes de tudo, fique tranquilo: o pagamento é realizado somente na entrega. Posso te explicar como funciona o produto?" },
+    { "stepId": 2, "name": "DESCOBERTA", "capture": "interesse_cliente", "message": "Para eu entender melhor sua necessidade, o que chamou sua atenção no produto?" },
+    { "stepId": 3, "name": "QUALIFICACAO", "capture": "dor_principal", "message": "Entendi. Há quanto tempo você procura uma solução ou tem interesse em melhorar esse aspecto?" },
+    { "stepId": 4, "name": "APRESENTACAO", "message": "O Volumetrão é um gel de uso tópico voltado para quem busca complementar seus cuidados pessoais. Muitas pessoas procuram o produto por praticidade e facilidade de aplicação." },
+    { "stepId": 5, "name": "COMO_USAR", "message": "A forma correta de uso acompanha a embalagem. É importante seguir exatamente as orientações do fabricante para obter a melhor experiência possível." },
+    { "stepId": 6, "name": "SEGURANCA", "message": "Alguns diferenciais do atendimento:\n\n✅ Pagamento na entrega\n✅ Embalagem discreta\n✅ Atendimento direto\n✅ Suporte para dúvidas\n\nPosso te mostrar as opções disponíveis?" },
+    { "stepId": 7, "name": "OFERTA", "message": "Temos diferentes opções disponíveis atualmente. Qual quantidade você pretende adquirir?" },
+    { "stepId": 8, "name": "CAPTURA_PEDIDO", "message": "Perfeito. Para verificar disponibilidade e preparar o pedido, preciso de algumas informações." },
+    { "stepId": 9, "name": "DADOS_CLIENTE", "capture": ["nome", "cidade", "bairro", "telefone"] },
+    { "stepId": 10, "name": "CONFIRMACAO", "message": "Obrigado. Seus dados foram registrados e o pedido seguirá para conferência. O pagamento será realizado na entrega." }
+  ],
+  "objecoes": [
+    { "keywords": ["caro", "preço alto"], "resposta": "Entendo sua preocupação. O ideal é avaliar o custo-benefício considerando suas necessidades." },
+    { "keywords": ["golpe", "confiável"], "resposta": "A dúvida é compreensível. Por isso trabalhamos com pagamento na entrega." }
+  ],
+  "palavrasChave": {
+    "sim": ["sim", "pode", "quero", "fecha", "ok"],
+    "nao": ["não", "nao", "recuso", "dispenso"]
+  },
+  "fallbackMessage": "Posso te ajudar melhor se você me explicar qual informação está procurando.",
+  "successMessage": "Pedido registrado com sucesso. Em breve você receberá as informações da entrega."
+}
